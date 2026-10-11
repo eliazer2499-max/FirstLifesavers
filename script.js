@@ -11,7 +11,7 @@
    ===================================================================== */
 const SITE_CONFIG = {
   whatsappNumber: "16466264996",
-  email: "YOUR_EMAIL@example.com",
+  email: "firstlifesavers@gmail.com",
   businessName: "First LifeSavers"
 };
 
