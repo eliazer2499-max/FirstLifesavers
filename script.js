@@ -10,7 +10,7 @@
    no recipient.
    ===================================================================== */
 const SITE_CONFIG = {
-  whatsappNumber: "12124441100",
+  whatsappNumber: "16466264996",
   email: "YOUR_EMAIL@example.com",
   businessName: "First LifeSavers"
 };
