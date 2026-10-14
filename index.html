@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" dir="ltr" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -16,14 +16,14 @@
 <script src="script.js" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="site-header" id="top">
   <div class="wrap header-row">
-    <a class="brand" href="#top" aria-label="First LifeSavers, back to top">
+    <a class="brand" href="#top" aria-label="First LifeSavers, back to top" data-i18n-aria="brandAria">
       <img src="assets/logo-white.svg" alt="First LifeSavers" width="200" height="35">
     </a>
-    <nav class="nav" id="site-nav" aria-label="Main">
+    <nav class="nav" id="site-nav" aria-label="Main" data-i18n-aria="navAria">
       <a href="#courses" data-i18n="navCourses">Courses</a>
       <a href="#why" data-i18n="navWhy">Why us</a>
       <a href="#who" data-i18n="navWho">Who it's for</a>
@@ -31,9 +31,9 @@
       <a class="btn btn-sm btn-red" href="#book" data-i18n="navBook">Book a class</a>
     </nav>
     <div class="header-tools">
-      <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch headings to Yiddish" lang="yi">אידיש</button>
+      <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch the site to Yiddish" data-i18n-aria="langAria" lang="yi"><span data-i18n="langLabel">אידיש</span></button>
       <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
+        <span class="sr-only" data-i18n="menu">Menu</span><span class="bars" aria-hidden="true"></span>
       </button>
     </div>
   </div>
@@ -44,7 +44,7 @@
     <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="none" poster="assets/hero-wide-poster.jpg" aria-hidden="true" data-wide="assets/hero-wide.mp4" data-tall="assets/hero-tall.mp4" data-poster-wide="assets/hero-wide-poster.jpg" data-poster-tall="assets/hero-tall-poster.jpg"></video>
     <div class="hero-shade" aria-hidden="true"></div>
     <div class="wrap hero-content">
-      <p class="eyebrow">First Aid &middot; CPR &amp; AED &middot; BLS</p>
+      <p class="eyebrow" data-i18n="heroEyebrow">First Aid · CPR &amp; AED · BLS</p>
       <h1 id="hero-title" data-i18n="heroTitle">Before help arrives, the first minutes are in your hands.</h1>
       <p class="hero-sub" data-i18n="heroSub">Certified, hands-on training for our community, taught in Yiddish or English, wherever you are.</p>
       <div class="hero-ctas">
@@ -55,58 +55,58 @@
     </div>
   </section>
 
-  <div class="facts" aria-label="At a glance">
+  <div class="facts" aria-label="At a glance" data-i18n-aria="factsAria">
     <div class="wrap facts-row">
-      <p><strong>Yiddish &amp; English</strong><span>speaking instructors</span></p>
-      <p><strong>Men's &amp; women's classes</strong><span>male and female instructors</span></p>
-      <p><strong>We come to you</strong><span>shul, school, office or home</span></p>
+      <p><strong data-i18n="fact1a">Yiddish &amp; English</strong><span data-i18n="fact1b">speaking instructors</span></p>
+      <p><strong data-i18n="fact2a">Men's &amp; women's classes</strong><span data-i18n="fact2b">male and female instructors</span></p>
+      <p><strong data-i18n="fact3a">We come to you</strong><span data-i18n="fact3b">shul, school, office or home</span></p>
     </div>
   </div>
 
   <section class="section" id="courses" aria-labelledby="courses-title">
     <div class="wrap">
       <header class="section-head reveal">
-        <p class="kicker">Courses</p>
+        <p class="kicker" data-i18n="coursesKicker">Courses</p>
         <h2 id="courses-title" data-i18n="coursesTitle">Certified courses</h2>
-        <p class="lead">Practical skills you'll remember when it counts. Every course is hands-on, in a calm setting, at your pace.</p>
+        <p class="lead" data-i18n="coursesLead">Practical skills you'll remember when it counts. Every course is hands-on, in a calm setting, at your pace.</p>
       </header>
       <div class="cards">
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="28" rx="5"/><path d="M18 12V8h12v4M24 20v12M18 26h12"/></svg></div>
-          <h3>First Aid</h3>
-          <p>Bleeding, burns, choking, falls, allergic reactions and the everyday emergencies at home, in shul or at camp. Learn what to do first, and what not to do.</p>
-          <a class="card-link" href="#book" data-course="First Aid">Ask about First Aid <span aria-hidden="true">&rarr;</span></a>
+          <h3 data-i18n="c1Title">First Aid</h3>
+          <p data-i18n="c1Text">Bleeding, burns, choking, falls, allergic reactions and the everyday emergencies at home, in shul or at camp. Learn what to do first, and what not to do.</p>
+          <a class="card-link" href="#book" data-course="First Aid"><span data-i18n="c1Link">Ask about First Aid</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
         </article>
         <article class="card card-featured reveal">
           <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 40S7 30 7 18a8.5 8.5 0 0 1 17-2 8.5 8.5 0 0 1 17 2c0 12-17 22-17 22Z"/><path d="M10 24h8l3-6 4 11 3-5h10"/></svg></div>
-          <h3>CPR &amp; AED</h3>
-          <p>Recognise cardiac arrest, start CPR with confidence and use an AED (defibrillator) the moment one arrives, for adults, children and infants.</p>
-          <a class="card-link" href="#book" data-course="CPR &amp; AED">Ask about CPR &amp; AED <span aria-hidden="true">&rarr;</span></a>
+          <h3 data-i18n="c2Title">CPR &amp; AED</h3>
+          <p data-i18n="c2Text">Recognise cardiac arrest, start CPR with confidence and use an AED (defibrillator) the moment one arrives, for adults, children and infants.</p>
+          <a class="card-link" href="#book" data-course="CPR &amp; AED"><span data-i18n="c2Link">Ask about CPR &amp; AED</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
         </article>
         <article class="card reveal">
           <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M10 41c1-8 7-13 14-13s13 5 14 13"/><path d="M24 31v8M20 35h8"/></svg></div>
-          <h3>BLS for Healthcare Providers</h3>
-          <p>Basic Life Support for nurses, EMTs, therapists, aides and other healthcare workers: high-quality CPR, team response, airway and AED skills.</p>
-          <a class="card-link" href="#book" data-course="BLS for Healthcare Providers">Ask about BLS <span aria-hidden="true">&rarr;</span></a>
+          <h3 data-i18n="c3Title">BLS for Healthcare Providers</h3>
+          <p data-i18n="c3Text">Basic Life Support for nurses, EMTs, therapists, aides and other healthcare workers: high-quality CPR, team response, airway and AED skills.</p>
+          <a class="card-link" href="#book" data-course="BLS for Healthcare Providers"><span data-i18n="c3Link">Ask about BLS</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
         </article>
       </div>
-      <p class="note reveal">Contact us for schedule &amp; pricing.</p>
+      <p class="note reveal" data-i18n="coursesNote">Contact us for schedule &amp; pricing.</p>
     </div>
   </section>
 
   <section class="section film" id="film" aria-labelledby="film-title">
     <div class="wrap film-grid">
       <div class="film-copy reveal">
-        <p class="kicker kicker-light">Be the one who knows</p>
+        <p class="kicker kicker-light" data-i18n="filmKicker">Be the one who knows</p>
         <h2 id="film-title" data-i18n="filmTitle">No time to guess.</h2>
-        <p>When something happens right in front of you, there's no time to look it up. Hatzolah is on the way, and until they arrive, the person standing closest is the first responder.</p>
-        <p>Our courses give you the steps, the practice and the confidence to act in those first minutes.</p>
+        <p data-i18n="filmP1">When something happens right in front of you, there's no time to look it up. Hatzolah is on the way, and until they arrive, the person standing closest is the first responder.</p>
+        <p data-i18n="filmP2">Our courses give you the steps, the practice and the confidence to act in those first minutes.</p>
         <a class="btn btn-red" href="#book" data-i18n="ctaCertified">Get certified</a>
       </div>
       <div class="film-player reveal">
         <video id="ad-video" controls playsinline preload="none" poster="assets/ad-poster.jpg">
           <source src="assets/first-lifesavers-ad.mp4" type="video/mp4">
-          Your browser can't play this video.
+          <span data-i18n="filmFallback">Your browser can't play this video.</span>
         </video>
       </div>
     </div>
@@ -115,18 +115,18 @@
   <section class="section" id="why" aria-labelledby="why-title">
     <div class="wrap why-grid">
       <figure class="why-photo reveal">
-        <img src="assets/bystander.jpg" alt="A Chassidish man runs through a shul hallway carrying a first-aid kit" width="640" height="800" loading="lazy">
+        <img src="assets/bystander.jpg" alt="A Chassidish man runs through a shul hallway carrying a first-aid kit" data-i18n-alt="whyAlt" width="640" height="800" loading="lazy">
       </figure>
       <div>
         <header class="section-head left reveal">
-          <p class="kicker">Why us</p>
+          <p class="kicker" data-i18n="whyKicker">Why us</p>
           <h2 id="why-title" data-i18n="whyTitle">Training that fits our community</h2>
         </header>
         <ul class="why-list">
-          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 12h22v16H18l-6 5v-5H8z"/><path d="M22 20h18v14h-4v5l-6-5h-8z"/></svg></span><div><h3>Yiddish &amp; English</h3><p>Instructors who speak your language, so every step is clear the first time.</p></div></li>
-          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="16" cy="16" r="6"/><circle cx="32" cy="16" r="6"/><path d="M6 38c0-7 4-12 10-12s10 5 10 12M22 38c0-7 4-12 10-12s10 5 10 12"/></svg></span><div><h3>Male &amp; female instructors</h3><p>Separate classes for men and women, each taught by an instructor of their own.</p></div></li>
-          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 22 24 8l18 14"/><path d="M11 19v21h26V19"/><path d="M20 40V29h8v11"/></svg></span><div><h3>We come to you</h3><p>Classes in your shul, school, office or home. You pick the place, we bring the equipment.</p></div></li>
-          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="14" r="6"/><path d="M14 40c0-7 4-13 10-13s10 6 10 13"/><circle cx="9" cy="20" r="4"/><circle cx="39" cy="20" r="4"/></svg></span><div><h3>Groups &amp; individuals</h3><p>A whole staff or a single person. Private sessions and group classes are both available.</p></div></li>
+          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 12h22v16H18l-6 5v-5H8z"/><path d="M22 20h18v14h-4v5l-6-5h-8z"/></svg></span><div><h3 data-i18n="why1a">Yiddish &amp; English</h3><p data-i18n="why1b">Instructors who speak your language, so every step is clear the first time.</p></div></li>
+          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="16" cy="16" r="6"/><circle cx="32" cy="16" r="6"/><path d="M6 38c0-7 4-12 10-12s10 5 10 12M22 38c0-7 4-12 10-12s10 5 10 12"/></svg></span><div><h3 data-i18n="why2a">Male &amp; female instructors</h3><p data-i18n="why2b">Separate classes for men and women, each taught by an instructor of their own.</p></div></li>
+          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 22 24 8l18 14"/><path d="M11 19v21h26V19"/><path d="M20 40V29h8v11"/></svg></span><div><h3 data-i18n="why3a">We come to you</h3><p data-i18n="why3b">Classes in your shul, school, office or home. You pick the place, we bring the equipment.</p></div></li>
+          <li class="reveal"><span class="why-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="14" r="6"/><path d="M14 40c0-7 4-13 10-13s10 6 10 13"/><circle cx="9" cy="20" r="4"/><circle cx="39" cy="20" r="4"/></svg></span><div><h3 data-i18n="why4a">Groups &amp; individuals</h3><p data-i18n="why4b">A whole staff or a single person. Private sessions and group classes are both available.</p></div></li>
         </ul>
       </div>
     </div>
@@ -135,16 +135,16 @@
   <section class="section alt" id="who" aria-labelledby="who-title">
     <div class="wrap">
       <header class="section-head reveal">
-        <p class="kicker">Who it's for</p>
+        <p class="kicker" data-i18n="whoKicker">Who it's for</p>
         <h2 id="who-title" data-i18n="whoTitle">For everyone who might be first on the scene</h2>
       </header>
       <ul class="who">
-        <li class="reveal"><span aria-hidden="true">&#x1F3E0;</span><h3>Parents</h3><p>Be ready for the kitchen, the playground and the Shabbos table.</p></li>
-        <li class="reveal"><span aria-hidden="true">&#x1F4DA;</span><h3>Teachers &amp; mosdos</h3><p>Staff training for chadorim, yeshivos, schools and daycares.</p></li>
-        <li class="reveal"><span aria-hidden="true">&#x26FA;</span><h3>Camp staff</h3><p>Counselors and staff prepared before the summer starts.</p></li>
-        <li class="reveal"><span aria-hidden="true">&#x1F54D;</span><h3>Shul members</h3><p>A trained group in every minyan, ready by the kit and the AED.</p></li>
-        <li class="reveal"><span aria-hidden="true">&#x1F3E2;</span><h3>Businesses</h3><p>Offices, stores and warehouses with a team that knows what to do.</p></li>
-        <li class="reveal"><span aria-hidden="true">&#x1FA7A;</span><h3>Healthcare workers</h3><p>BLS for providers who need it for work.</p></li>
+        <li class="reveal"><span aria-hidden="true">&#x1F3E0;</span><h3 data-i18n="who1a">Parents</h3><p data-i18n="who1b">Be ready for the kitchen, the playground and the Shabbos table.</p></li>
+        <li class="reveal"><span aria-hidden="true">&#x1F4DA;</span><h3 data-i18n="who2a">Teachers &amp; mosdos</h3><p data-i18n="who2b">Staff training for chadorim, yeshivos, schools and daycares.</p></li>
+        <li class="reveal"><span aria-hidden="true">&#x26FA;</span><h3 data-i18n="who3a">Camp staff</h3><p data-i18n="who3b">Counselors and staff prepared before the summer starts.</p></li>
+        <li class="reveal"><span aria-hidden="true">&#x1F54D;</span><h3 data-i18n="who4a">Shul members</h3><p data-i18n="who4b">A trained group in every minyan, ready by the kit and the AED.</p></li>
+        <li class="reveal"><span aria-hidden="true">&#x1F3E2;</span><h3 data-i18n="who5a">Businesses</h3><p data-i18n="who5b">Offices, stores and warehouses with a team that knows what to do.</p></li>
+        <li class="reveal"><span aria-hidden="true">&#x1FA7A;</span><h3 data-i18n="who6a">Healthcare workers</h3><p data-i18n="who6b">BLS for providers who need it for work.</p></li>
       </ul>
     </div>
   </section>
@@ -153,17 +153,17 @@
     <div class="wrap how-grid">
       <div>
         <header class="section-head left reveal">
-          <p class="kicker">How it works</p>
+          <p class="kicker" data-i18n="howKicker">How it works</p>
           <h2 id="how-title" data-i18n="howTitle">Three simple steps</h2>
         </header>
         <ol class="steps">
-          <li class="reveal"><h3>Reach out</h3><p>Tell us the course, the group and where you'd like the class.</p></li>
-          <li class="reveal"><h3>Pick a time &amp; place</h3><p>We set a date that works for you, at your location.</p></li>
-          <li class="reveal"><h3>Train &amp; get certified</h3><p>Hands-on practice with an instructor, then you're ready.</p></li>
+          <li class="reveal"><h3 data-i18n="how1a">Reach out</h3><p data-i18n="how1b">Tell us the course, the group and where you'd like the class.</p></li>
+          <li class="reveal"><h3 data-i18n="how2a">Pick a time &amp; place</h3><p data-i18n="how2b">We set a date that works for you, at your location.</p></li>
+          <li class="reveal"><h3 data-i18n="how3a">Train &amp; get certified</h3><p data-i18n="how3b">Hands-on practice with an instructor, then you're ready.</p></li>
         </ol>
       </div>
       <figure class="how-photo reveal">
-        <img src="assets/kit.jpg" alt="A Chassidish man kneels and opens a first-aid kit next to an AED case" width="960" height="680" loading="lazy">
+        <img src="assets/kit.jpg" alt="A Chassidish man kneels and opens a first-aid kit next to an AED case" data-i18n-alt="howAlt" width="960" height="680" loading="lazy">
       </figure>
     </div>
   </section>
@@ -171,17 +171,17 @@
   <section class="section alt" id="faq" aria-labelledby="faq-title">
     <div class="wrap narrow">
       <header class="section-head reveal">
-        <p class="kicker">FAQ</p>
+        <p class="kicker" data-i18n="faqKicker">FAQ</p>
         <h2 id="faq-title" data-i18n="faqTitle">Questions &amp; answers</h2>
       </header>
       <div class="faq">
-        <details class="reveal"><summary>Do I need any medical background?</summary><p>No. First Aid and CPR &amp; AED are made for everyday people. If you can follow clear steps, you can learn this. BLS is the course designed for healthcare providers.</p></details>
-        <details class="reveal"><summary>Which course is right for me?</summary><p>Parents, teachers, staff and shul members usually start with First Aid and/or CPR &amp; AED. Nurses, EMTs and other healthcare workers usually need BLS. Not sure? Send us a message and we'll help you choose.</p></details>
-        <details class="reveal"><summary>Are classes separate for men and women?</summary><p>Yes. We have male and female instructors, and men's and women's classes are held separately.</p></details>
-        <details class="reveal"><summary>What language are classes taught in?</summary><p>Yiddish or English, whichever your group prefers.</p></details>
-        <details class="reveal"><summary>Can you come to our shul, school or office?</summary><p>Yes. Classes can be held in your shul, school, office or home, for groups or for individuals.</p></details>
-        <details class="reveal"><summary>Will I be certified?</summary><p>Yes, these are certified courses. When you book, we'll go over the certification that comes with the course you choose.</p></details>
-        <details class="reveal"><summary>How much does it cost, and how long is a class?</summary><p>It depends on the course and the size of your group. Contact us for schedule &amp; pricing.</p></details>
+        <details class="reveal"><summary data-i18n="q1">Do I need any medical background?</summary><div class="faq-a"><p data-i18n="a1">No. First Aid and CPR &amp; AED are made for everyday people. If you can follow clear steps, you can learn this. BLS is the course designed for healthcare providers.</p></div></details>
+        <details class="reveal"><summary data-i18n="q2">Which course is right for me?</summary><div class="faq-a"><p data-i18n="a2">Parents, teachers, staff and shul members usually start with First Aid and/or CPR &amp; AED. Nurses, EMTs and other healthcare workers usually need BLS. Not sure? Send us a message and we'll help you choose.</p></div></details>
+        <details class="reveal"><summary data-i18n="q3">Are classes separate for men and women?</summary><div class="faq-a"><p data-i18n="a3">Yes. We have male and female instructors, and men's and women's classes are held separately.</p></div></details>
+        <details class="reveal"><summary data-i18n="q4">What language are classes taught in?</summary><div class="faq-a"><p data-i18n="a4">Yiddish or English, whichever your group prefers.</p></div></details>
+        <details class="reveal"><summary data-i18n="q5">Can you come to our shul, school or office?</summary><div class="faq-a"><p data-i18n="a5">Yes. Classes can be held in your shul, school, office or home, for groups or for individuals.</p></div></details>
+        <details class="reveal"><summary data-i18n="q6">Will I be certified?</summary><div class="faq-a"><p data-i18n="a6">Yes, these are certified courses. When you book, we'll go over the certification that comes with the course you choose.</p></div></details>
+        <details class="reveal"><summary data-i18n="q7">How much does it cost, and how long is a class?</summary><div class="faq-a"><p data-i18n="a7">It depends on the course and the size of your group. Contact us for schedule &amp; pricing.</p></div></details>
       </div>
     </div>
   </section>
@@ -189,95 +189,137 @@
   <section class="section book" id="book" aria-labelledby="book-title">
     <div class="wrap book-grid">
       <div class="book-copy reveal">
-        <p class="kicker kicker-light">Get started</p>
+        <p class="kicker kicker-light" data-i18n="bookKicker">Get started</p>
         <h2 id="book-title" data-i18n="bookTitle">Book a class</h2>
-        <p>Fill in a few details and we'll prepare a message for you to send on WhatsApp or by email. Nothing is sent until you press send.</p>
+        <p data-i18n="bookLead">Fill in a few details and we'll prepare a message for you to send on WhatsApp, by text or by email. Nothing is sent until you press send.</p>
         <ul class="book-points">
-          <li>Yiddish or English</li>
-          <li>Men's or women's class</li>
-          <li>Your location or ours</li>
+          <li data-i18n="bp1">Yiddish or English</li>
+          <li data-i18n="bp2">Men's or women's class</li>
+          <li data-i18n="bp3">Your location or ours</li>
         </ul>
-        <div class="contact-bar" id="contact-bar" hidden>
-          <p class="contact-label">Or reach us directly</p>
-          <ul class="contact-list">
-            <li id="cl-phone" hidden><span class="cl-k">Call or text</span><a id="cl-tel" href="#"></a><a class="cl-sms" id="cl-sms" href="#">Text</a></li>
-            <li id="cl-wa" hidden><span class="cl-k">WhatsApp</span><a id="cl-wa-a" href="#" target="_blank" rel="noopener"></a></li>
-            <li id="cl-mail" hidden><span class="cl-k">Email</span><a id="cl-mail-a" href="#"></a></li>
-          </ul>
+        <div class="direct" id="direct" hidden>
+          <p class="direct-label" data-i18n="directLabel">Or reach us directly</p>
+          <div class="direct-card">
+            <button class="number-btn" type="button" id="number-btn" data-sheet aria-haspopup="dialog">
+              <span class="number-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span class="number-txt"><span class="number" id="direct-number" dir="ltr">(718) 555-0123</span><span class="number-hint" data-i18n="numberHint">Tap to call, text or WhatsApp</span></span>
+              <span class="number-chev"><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+            </button>
+            <div class="quick" id="direct-quick">
+              <a class="quick-btn" id="dq-call" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="actCall">Call</span></a>
+              <a class="quick-btn" id="dq-text" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><span data-i18n="actText">Text</span></a>
+              <a class="quick-btn quick-wa" id="dq-wa" href="#" target="_blank" rel="noopener"><svg class="ico ico-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="actWa">WhatsApp</span></a>
+            </div>
+            <a class="email-row" id="direct-email" href="#">
+              <span class="email-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg></span>
+              <span class="email-txt"><span class="email-k" data-i18n="emailLabel">Email</span><span class="email-v" id="direct-email-v" dir="ltr">info@firstlifesavers.com</span></span>
+            </a>
+          </div>
         </div>
       </div>
       <form class="book-form reveal" id="book-form" novalidate>
         <div class="field">
-          <label for="f-name">Your name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required>
-          <p class="err" id="err-name" hidden>Please enter your name.</p>
+          <label for="f-name" data-i18n="fName">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" dir="auto" required>
+          <p class="err" id="err-name" hidden data-i18n="errName">Please enter your name.</p>
         </div>
         <div class="field">
-          <label for="f-course">Course</label>
-          <select id="f-course" name="course" required>
-            <option value="">Choose a course</option>
-            <option>First Aid</option>
-            <option>CPR &amp; AED</option>
-            <option>BLS for Healthcare Providers</option>
-            <option>Not sure yet, please advise</option>
-          </select>
-          <p class="err" id="err-course" hidden>Please choose a course.</p>
+          <label for="f-course" data-i18n="fCourse">Course</label>
+          <div class="select">
+            <select id="f-course" name="course" required>
+              <option value="" data-i18n="optChoose">Choose a course</option>
+              <option value="First Aid" data-i18n="optFirstAid">First Aid</option>
+              <option value="CPR &amp; AED" data-i18n="optCpr">CPR &amp; AED</option>
+              <option value="BLS for Healthcare Providers" data-i18n="optBls">BLS for Healthcare Providers</option>
+              <option value="Not sure yet, please advise" data-i18n="optUnsure">Not sure yet, please advise</option>
+            </select>
+          </div>
+          <p class="err" id="err-course" hidden data-i18n="errCourse">Please choose a course.</p>
         </div>
         <div class="field-row">
           <fieldset class="field">
-            <legend>Class for</legend>
+            <legend data-i18n="fClassFor">Class for</legend>
             <div class="seg">
-              <input type="radio" id="f-men" name="classFor" value="Men" checked><label for="f-men">Men</label>
-              <input type="radio" id="f-women" name="classFor" value="Women"><label for="f-women">Women</label>
+              <input type="radio" id="f-men" name="classFor" value="Men" checked><label for="f-men" data-i18n="optMen">Men</label>
+              <input type="radio" id="f-women" name="classFor" value="Women"><label for="f-women" data-i18n="optWomen">Women</label>
             </div>
           </fieldset>
           <fieldset class="field">
-            <legend>Language</legend>
+            <legend data-i18n="fLanguage">Language</legend>
             <div class="seg">
-              <input type="radio" id="f-yi" name="language" value="Yiddish" checked><label for="f-yi">Yiddish</label>
-              <input type="radio" id="f-en" name="language" value="English"><label for="f-en">English</label>
+              <input type="radio" id="f-yi" name="language" value="Yiddish" checked><label for="f-yi" data-i18n="optYiddish">Yiddish</label>
+              <input type="radio" id="f-en" name="language" value="English"><label for="f-en" data-i18n="optEnglish">English</label>
             </div>
           </fieldset>
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="f-group">Who is joining</label>
-            <select id="f-group" name="group">
-              <option>Just me</option>
-              <option>A small group (2–10)</option>
-              <option>A larger group (10+)</option>
-            </select>
+            <label for="f-group" data-i18n="fGroup">Who is joining</label>
+            <div class="select">
+              <select id="f-group" name="group">
+                <option value="Just me" data-i18n="optJustMe">Just me</option>
+                <option value="A small group (2–10)" data-i18n="optSmall">A small group (2–10)</option>
+                <option value="A larger group (10+)" data-i18n="optLarge">A larger group (10+)</option>
+              </select>
+            </div>
           </div>
           <div class="field">
-            <label for="f-where">Where</label>
-            <select id="f-where" name="where">
-              <option>Shul</option>
-              <option>School / mosad</option>
-              <option>Office / business</option>
-              <option>Home</option>
-              <option>Camp</option>
-              <option>Other / not sure</option>
-            </select>
+            <label for="f-where" data-i18n="fWhere">Where</label>
+            <div class="select">
+              <select id="f-where" name="where">
+                <option value="Shul" data-i18n="optShul">Shul</option>
+                <option value="School / mosad" data-i18n="optSchool">School / mosad</option>
+                <option value="Office / business" data-i18n="optOffice">Office / business</option>
+                <option value="Home" data-i18n="optHome">Home</option>
+                <option value="Camp" data-i18n="optCamp">Camp</option>
+                <option value="Other / not sure" data-i18n="optOther">Other / not sure</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <label for="f-when">Preferred dates or times <span class="opt">(optional)</span></label>
-          <input id="f-when" name="when" type="text" placeholder="e.g. evenings after Maariv">
+        <button class="more-toggle" type="button" id="more-toggle" aria-expanded="false" aria-controls="more">
+          <span class="more-plus"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span><span data-i18n="moreToggle">Add preferred times or a note</span> <span class="opt" data-i18n="optional">(optional)</span>
+        </button>
+        <div class="collapse" id="more">
+          <div class="collapse-inner">
+            <div class="field">
+              <label for="f-when"><span data-i18n="fWhen">Preferred dates or times</span> <span class="opt" data-i18n="optional">(optional)</span></label>
+              <input id="f-when" name="when" type="text" dir="auto" placeholder="e.g. evenings after Maariv" data-i18n-ph="phWhen">
+            </div>
+            <div class="field">
+              <label for="f-notes"><span data-i18n="fNotes">Anything else?</span> <span class="opt" data-i18n="optional">(optional)</span></label>
+              <textarea id="f-notes" name="notes" rows="3" dir="auto"></textarea>
+            </div>
+          </div>
         </div>
-        <div class="field">
-          <label for="f-notes">Anything else? <span class="opt">(optional)</span></label>
-          <textarea id="f-notes" name="notes" rows="3"></textarea>
-        </div>
-        <button class="btn btn-red btn-lg btn-block" type="submit">Prepare my message</button>
-        <div class="ready" id="ready" hidden tabindex="-1" aria-live="polite">
-          <p class="ready-title"><span class="check" aria-hidden="true"></span>Your message is ready</p>
-          <pre class="ready-text" id="ready-text"></pre>
-          <div class="ready-actions">
-            <a class="btn btn-wa" id="wa-link" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
-            <a class="btn btn-navy" id="mail-link" href="#">Send by email</a>
-            <a class="btn btn-navy" id="sms-link" href="#" hidden>Send as text (SMS)</a>
-            <a class="btn btn-outline" id="call-link" href="#" hidden>Call us</a>
-            <button class="btn btn-outline" type="button" id="copy-btn">Copy text</button>
+        <button class="btn btn-red btn-lg btn-block prepare" type="submit" id="prepare-btn"><span id="prepare-label" data-i18n="btnPrepare">Prepare my message</span></button>
+
+        <div class="collapse" id="ready-wrap">
+          <div class="collapse-inner">
+            <div class="ready" id="ready" tabindex="-1" aria-live="polite">
+              <div class="ready-head">
+                <span class="ready-check"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19 7.5"/></svg></span>
+                <div>
+                  <p class="ready-title" data-i18n="readyTitle">Your message is ready</p>
+                  <p class="ready-sub" data-i18n="readySub">Choose how to send it. It opens in your app, ready to go.</p>
+                </div>
+              </div>
+              <div class="bubble-wrap">
+                <pre class="bubble" id="ready-text"></pre>
+              </div>
+              <a class="send-wa" id="wa-link" href="#" target="_blank" rel="noopener">
+                <span class="send-wa-ico"><svg class="ico ico-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
+                <span class="send-wa-txt"><strong data-i18n="sendWa">Send on WhatsApp</strong></span>
+                <span class="send-wa-go"><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+              </a>
+              <p class="send-or"><span data-i18n="sendOr">or send another way</span></p>
+              <div class="send-alt" id="send-alt">
+                <a class="alt-btn" id="sms-link" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><span data-i18n="sendText">Text</span></a>
+                <a class="alt-btn" id="mail-link" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span data-i18n="sendEmail">Email</span></a>
+                <a class="alt-btn" id="call-link" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="sendCall">Call us</span></a>
+              </div>
+              <button class="copy-btn" type="button" id="copy-btn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span id="copy-label" data-i18n="copy">Copy message</span></button>
+            </div>
           </div>
         </div>
       </form>
@@ -289,26 +331,48 @@
   <div class="wrap footer-grid">
     <div>
       <img src="assets/logo-white.svg" alt="First LifeSavers" width="220" height="38" loading="lazy">
-      <p class="footer-tag">Certified First Aid, CPR &amp; AED and BLS training.<br>Yiddish &amp; English speaking instructors.</p>
+      <p class="footer-tag"><span data-i18n="footTag1">Certified First Aid, CPR &amp; AED and BLS training.</span><br><span data-i18n="footTag2">Yiddish &amp; English speaking instructors.</span></p>
     </div>
     <div class="footer-pasuk">
       <p lang="he" dir="rtl">ונשמרתם מאוד לנפשותיכם</p>
-      <p class="small">“Guard your lives carefully.” (Devarim 4:15)</p>
+      <p class="small" data-i18n="footPasuk">“Guard your lives carefully.” (Devarim 4:15)</p>
     </div>
     <div class="footer-contact" id="footer-contact">
-      <p class="footer-h">Contact us</p>
-      <p><span class="fc-l">Phone:</span> <a id="fc-tel" href="#">(718) 555-0123</a></p>
-      <p><span class="fc-l">WhatsApp:</span> <a id="fc-wa" href="#">(718) 555-0123</a></p>
-      <p><span class="fc-l">Email:</span> <a id="fc-mail" href="#">info@firstlifesavers.com</a></p>
+      <p class="footer-h" data-i18n="footContact">Contact us</p>
+      <button class="fc-number" type="button" id="fc-number" data-sheet aria-haspopup="dialog">
+        <span class="fc-k" id="fc-k" data-i18n="footPhoneWa">Phone &amp; WhatsApp</span>
+        <span class="fc-v" id="fc-v" dir="ltr">(718) 555-0123</span>
+      </button>
+      <div class="fc-quick" id="fc-quick">
+        <a class="fc-btn" id="fc-call" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="actCall">Call</span></a>
+        <a class="fc-btn" id="fc-text" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><span data-i18n="actText">Text</span></a>
+        <a class="fc-btn fc-wa" id="fc-wa" href="#" target="_blank" rel="noopener"><svg class="ico ico-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="actWa">WhatsApp</span></a>
+      </div>
+      <a class="fc-mail" id="fc-mail" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span id="fc-mail-v" dir="ltr">info@firstlifesavers.com</span></a>
     </div>
-    <nav class="footer-nav" aria-label="Footer">
-      <a href="#courses">Courses</a><a href="#why">Why us</a><a href="#faq">FAQ</a><a href="#book">Book a class</a>
+    <nav class="footer-nav" aria-label="Footer" data-i18n-aria="footNavAria">
+      <a href="#courses" data-i18n="navCourses">Courses</a><a href="#why" data-i18n="navWhy">Why us</a><a href="#faq" data-i18n="navFaq">FAQ</a><a href="#book" data-i18n="navBook">Book a class</a>
     </nav>
   </div>
   <div class="wrap footer-base">
-    <p>&copy; <span id="year">2026</span> First LifeSavers. An independent training provider.</p>
-    <a href="#top">Back to top &uarr;</a>
+    <p><span dir="ltr">&copy; <span id="year">2026</span> First LifeSavers.</span> <span data-i18n="footCopy">An independent training provider.</span></p>
+    <a href="#top"><span data-i18n="backTop">Back to top</span> &uarr;</a>
   </div>
 </footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-number">
+  <div class="sheet-panel">
+    <div class="sheet-grip" aria-hidden="true"></div>
+    <button class="sheet-x" type="button" id="sheet-x" aria-label="Close" data-i18n-aria="sheetClose"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <p class="sheet-number" id="sheet-number" dir="ltr">(718) 555-0123</p>
+    <p class="sheet-ask" data-i18n="sheetAsk">How would you like to reach us?</p>
+    <div class="sheet-list">
+      <a class="sheet-opt" id="sh-call" href="#"><span class="so-ico so-call"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="so-txt"><strong data-i18n="sheetCall">Call</strong><small data-i18n="sheetCallSub">Speak to us now</small></span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+      <a class="sheet-opt" id="sh-text" href="#"><span class="so-ico so-text"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span><span class="so-txt"><strong data-i18n="sheetText">Text message</strong><small data-i18n="sheetTextSub">Send an SMS</small></span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+      <a class="sheet-opt" id="sh-wa" href="#" target="_blank" rel="noopener"><span class="so-ico so-wa"><svg class="ico ico-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span class="so-txt"><strong data-i18n="sheetWa">WhatsApp</strong><small data-i18n="sheetWaSub">Message us on WhatsApp</small></span><svg class="ico ico-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+    </div>
+    <button class="sheet-cancel" type="button" id="sheet-cancel" data-i18n="sheetCancel">Cancel</button>
+  </div>
+</dialog>
 </body>
 </html>

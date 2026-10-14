@@ -4,15 +4,23 @@ A fast, static website (plain HTML, CSS and JavaScript). No server, no build ste
 
 ## Before you publish: add your contact details
 
-Open `script.js` and edit the two lines at the very top:
+Open `script.js` and edit the three lines at the very top:
 
 ```js
-whatsappNumber: "YOUR_WHATSAPP_NUMBER",   // digits only, e.g. "17185550123"
-email: "YOUR_EMAIL@example.com",          // where booking requests go
+phoneNumber: "(718) 555-0123",
+whatsappNumber: "(718) 555-0123",
+email: "info@firstlifesavers.com",
 ```
 
-The booking form builds a ready-made message and opens WhatsApp (wa.me) or the
-visitor's email app. Nothing is sent from the website itself.
+These fill in the contact block, the Call / Text / WhatsApp buttons and pop-up,
+and the footer. The booking form builds a ready-made message and opens WhatsApp,
+Messages (text) or the visitor's email app. Nothing is sent from the website itself.
+
+## English / Yiddish
+
+The אידיש / English button switches the whole page (right-to-left in Yiddish)
+and remembers the choice. Every wording lives in `script.js` under `I18N`:
+`en` for English, `yi` for Yiddish. To change a wording, change it there.
 
 ## Publish free on GitHub Pages
 
@@ -28,6 +36,5 @@ Tip: on a Mac, files starting with a dot (like `.nojekyll`) are hidden. Press Cm
 
 - `index.html` – the page
 - `styles.css` – design (brand red #D3213A, navy #182945, Montserrat)
-- `script.js` – settings, booking form, Yiddish/English headings toggle
+- `script.js` – settings, booking form, contact pop-up, all English and Yiddish wording
 - `assets/` – logo, photos, videos and fonts (all local, total about 8 MB)
-- `tests/` – an automated check (run `node --test` in this folder), not needed for hosting
