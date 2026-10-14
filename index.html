@@ -197,6 +197,14 @@
           <li>Men's or women's class</li>
           <li>Your location or ours</li>
         </ul>
+        <div class="contact-bar" id="contact-bar" hidden>
+          <p class="contact-label">Or reach us directly</p>
+          <ul class="contact-list">
+            <li id="cl-phone" hidden><span class="cl-k">Call or text</span><a id="cl-tel" href="#"></a><a class="cl-sms" id="cl-sms" href="#">Text</a></li>
+            <li id="cl-wa" hidden><span class="cl-k">WhatsApp</span><a id="cl-wa-a" href="#" target="_blank" rel="noopener"></a></li>
+            <li id="cl-mail" hidden><span class="cl-k">Email</span><a id="cl-mail-a" href="#"></a></li>
+          </ul>
+        </div>
       </div>
       <form class="book-form reveal" id="book-form" novalidate>
         <div class="field">
@@ -267,6 +275,8 @@
           <div class="ready-actions">
             <a class="btn btn-wa" id="wa-link" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
             <a class="btn btn-navy" id="mail-link" href="#">Send by email</a>
+            <a class="btn btn-navy" id="sms-link" href="#" hidden>Send as text (SMS)</a>
+            <a class="btn btn-outline" id="call-link" href="#" hidden>Call us</a>
             <button class="btn btn-outline" type="button" id="copy-btn">Copy text</button>
           </div>
         </div>

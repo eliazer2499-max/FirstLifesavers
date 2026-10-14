@@ -1,17 +1,19 @@
 /* =====================================================================
-   FIRST LIFESAVERS: SITE SETTINGS  <-- EDIT THESE TWO LINES
+   FIRST LIFESAVERS: SITE SETTINGS  <-- EDIT ONLY THESE LINES
    ---------------------------------------------------------------------
-   whatsappNumber: your WhatsApp number in international format, digits
-                   only, no "+", spaces or dashes. Example for a US number
-                   (718) 555-0123 -> "17185550123"
+   phoneNumber:    your number, digits only (country code first, no "+",
+                   spaces or dashes). Used for the Call and Text (SMS)
+                   buttons. Example: (718) 555-0123 -> "17185550123"
+   whatsappNumber: your WhatsApp number, same format. Usually the same.
    email:          the email address booking requests should go to.
-   Until these are filled in, the booking form still works: WhatsApp
-   opens and asks the visitor to pick a contact, and email opens with
-   no recipient.
+   To change your number or email later: open script.js on GitHub,
+   click the pencil, change the text between the quotes, Commit.
+   Any button whose setting is empty or still says YOUR_... is hidden.
    ===================================================================== */
 const SITE_CONFIG = {
-  whatsappNumber: "16466264996",
-  email: "firstlifesavers@gmail.com",
+  phoneNumber: "YOUR_PHONE_NUMBER",
+  whatsappNumber: "YOUR_WHATSAPP_NUMBER",
+  email: "YOUR_EMAIL@example.com",
   businessName: "First LifeSavers"
 };
 
@@ -26,7 +28,20 @@ function cleanEmail(e) {
   return v;
 }
 function isConfigured(cfg) {
-  return { whatsapp: !!cleanNumber(cfg.whatsappNumber), email: !!cleanEmail(cfg.email) };
+  return { phone: !!cleanNumber(cfg.phoneNumber), whatsapp: !!cleanNumber(cfg.whatsappNumber), email: !!cleanEmail(cfg.email) };
+}
+function buildSmsLink(cfg, text) {
+  const num = cleanNumber(cfg.phoneNumber);
+  return "sms:+" + num + (text ? "?&body=" + encodeURIComponent(text) : "");
+}
+function displayNumber(n) {
+  const d = cleanNumber(n);
+  if (/^1\d{10}$/.test(d)) return "(" + d.slice(1,4) + ") " + d.slice(4,7) + "-" + d.slice(7);
+  if (/^\d{10}$/.test(d)) return "(" + d.slice(0,3) + ") " + d.slice(3,6) + "-" + d.slice(6);
+  return "+" + d;
+}
+function buildTelLink(cfg) {
+  return "tel:+" + cleanNumber(cfg.phoneNumber);
 }
 function buildMessage(d) {
   const lines = [
@@ -153,9 +168,29 @@ if (typeof document !== "undefined") {
     /* booking form */
     const ready = $("#ready"), readyText = $("#ready-text"), wa = $("#wa-link"), mail = $("#mail-link"), copyBtn = $("#copy-btn");
     const conf = isConfigured(SITE_CONFIG);
-    if (!conf.whatsapp || !conf.email) {
-      console.info("[First LifeSavers] Fill in SITE_CONFIG.whatsappNumber and SITE_CONFIG.email at the top of script.js.");
+    if (!conf.whatsapp || !conf.email || !conf.phone) {
+      console.info("[First LifeSavers] Fill in SITE_CONFIG at the top of script.js.");
     }
+    const sms = $("#sms-link"), call = $("#call-link");
+    /* contact buttons: shown only for settings that are filled in */
+    const bar = $("#contact-bar");
+    if (bar) {
+      const show = (id, on) => { const el = $(id); if (el) el.hidden = !on; };
+      if (conf.phone) {
+        const t = $("#cl-tel"); t.href = buildTelLink(SITE_CONFIG); t.textContent = displayNumber(SITE_CONFIG.phoneNumber);
+        $("#cl-sms").href = buildSmsLink(SITE_CONFIG, "");
+      }
+      if (conf.whatsapp) {
+        const w = $("#cl-wa-a"); w.href = "https://wa.me/" + cleanNumber(SITE_CONFIG.whatsappNumber); w.textContent = displayNumber(SITE_CONFIG.whatsappNumber);
+      }
+      if (conf.email) {
+        const m = $("#cl-mail-a"); const em = cleanEmail(SITE_CONFIG.email); m.href = "mailto:" + em; m.textContent = em;
+      }
+      show("#cl-phone", conf.phone); show("#cl-wa", conf.whatsapp); show("#cl-mail", conf.email);
+      bar.hidden = !(conf.phone || conf.whatsapp || conf.email);
+    }
+    if (sms) sms.hidden = !conf.phone;
+    if (call) { call.hidden = !conf.phone; if (conf.phone) call.href = buildTelLink(SITE_CONFIG); }
     function check(id, ok) {
       const f = $("#f-" + id), e = $("#err-" + id);
       f.classList.toggle("invalid", !ok); f.setAttribute("aria-invalid", String(!ok)); e.hidden = ok;
@@ -171,6 +206,7 @@ if (typeof document !== "undefined") {
       readyText.textContent = text;
       wa.href = buildWhatsAppLink(SITE_CONFIG, text);
       mail.href = buildMailtoLink(SITE_CONFIG, d, text);
+      if (sms && conf.phone) sms.href = buildSmsLink(SITE_CONFIG, text);
       ready.hidden = false;
       ready.focus({ preventScroll: true });
       ready.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
@@ -184,5 +220,5 @@ if (typeof document !== "undefined") {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { SITE_CONFIG, cleanNumber, cleanEmail, isConfigured, buildMessage, buildWhatsAppLink, buildMailtoLink, I18N };
+  module.exports = { SITE_CONFIG, cleanNumber, cleanEmail, isConfigured, buildMessage, buildWhatsAppLink, buildMailtoLink, buildSmsLink, buildTelLink, displayNumber, I18N };
 }

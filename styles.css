@@ -225,3 +225,13 @@ a{color:var(--red)}
   *,*::before,*::after{animation:none !important;transition:none !important}
   .reveal{opacity:1;transform:none}
 }
+
+/* direct contact details */
+.contact-bar{margin-top:1.6rem}
+.contact-label{font-weight:700;margin:0 0 .6rem;opacity:.9}
+.contact-list{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.contact-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .7rem}
+.cl-k{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;opacity:.7;min-width:6.5rem}
+.contact-list a{color:#fff;font-weight:700;font-size:1.15rem;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:3px;word-break:break-all}
+.contact-list a.cl-sms{font-size:.9rem;font-weight:600;opacity:.85}
+[hidden]{display:none !important}

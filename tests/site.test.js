@@ -58,7 +58,7 @@ test("site stays light", () => {
 
 test("config is one clearly marked constant with placeholders", () => {
   const js = fs.readFileSync(path.join(ROOT, "script.js"), "utf8");
-  assert.match(js.slice(0, 1200), /const SITE_CONFIG = \{\s*whatsappNumber: "YOUR_WHATSAPP_NUMBER",\s*email: "YOUR_EMAIL@example\.com"/);
+  assert.match(js.slice(0, 1200), /const SITE_CONFIG = \{\s*phoneNumber: "YOUR_PHONE_NUMBER",\s*whatsappNumber: "YOUR_WHATSAPP_NUMBER",\s*email: "YOUR_EMAIL@example\.com"/);
   assert.strictEqual((js.match(/YOUR_WHATSAPP_NUMBER/g) || []).length, 1);
   assert.ok(!html.includes("YOUR_"), "placeholders only live in script.js");
 });
@@ -82,4 +82,12 @@ test("yiddish strings are Hebrew-script", () => {
   for (const [k, v] of Object.entries(lib.I18N.yi)) assert.match(v, /[\u05D0-\u05EA]/, k);
   const keys = [...html.matchAll(/data-i18n="(\w+)"/g)].map(m => m[1]);
   for (const k of keys) assert.ok(lib.I18N.yi[k], "missing yiddish for " + k);
+});
+
+test("sms and tel links", () => {
+  const s = require("../script.js");
+  const cfg = { phoneNumber: "17185550123" };
+  assert.strictEqual(s.buildTelLink(cfg), "tel:+17185550123");
+  assert.strictEqual(s.buildSmsLink(cfg, "hi there"), "sms:+17185550123?&body=hi%20there");
+  assert.strictEqual(s.isConfigured({phoneNumber:"YOUR_PHONE_NUMBER"}).phone, false);
 });
