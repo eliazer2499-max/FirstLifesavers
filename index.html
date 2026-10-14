@@ -199,14 +199,10 @@
         </ul>
         <div class="direct" id="direct" hidden>
           <p class="direct-label" data-i18n="directLabel">Or reach us directly</p>
-          <button class="direct-number" type="button" id="number-btn" data-sheet aria-haspopup="dialog" aria-label="Call, text or WhatsApp" data-i18n-aria="numberAria">
-            <span class="dn-v" id="direct-number" dir="ltr">(646) 626-4996</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="chips" id="direct-quick">
-            <a class="chip" id="dq-call" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="actCall">Call</span></a>
-            <a class="chip" id="dq-text" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><span data-i18n="actText">Text</span></a>
-            <a class="chip" id="direct-email" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span data-i18n="emailLabel">Email</span></a>
-          </div>
+          <ul class="contact-lines">
+            <li><button class="cl-row" type="button" id="number-btn" data-sheet aria-haspopup="dialog" aria-label="Call, text or WhatsApp" data-i18n-aria="numberAria"><span class="cl-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="cl-v" id="direct-number" dir="ltr">(646) 626-4996</span></button></li>
+            <li><a class="cl-row" id="direct-email" href="#"><span class="cl-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg></span><span class="cl-v" id="direct-email-v" dir="ltr">firstlifesavers@gmail.com</span></a></li>
+          </ul>
         </div>
       </div>
       <form class="book-form reveal" id="book-form" novalidate>
@@ -319,15 +315,10 @@
     </div>
     <div class="footer-contact" id="footer-contact">
       <p class="footer-h" data-i18n="footContact">Contact us</p>
-      <button class="direct-number fc-number" type="button" id="fc-number" data-sheet aria-haspopup="dialog" aria-label="Call, text or WhatsApp" data-i18n-aria="numberAria">
-        <span class="dn-v" id="fc-v" dir="ltr">(646) 626-4996</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-      </button>
-      <div class="chips" id="fc-quick">
-        <a class="chip" id="fc-call" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="actCall">Call</span></a>
-        <a class="chip" id="fc-text" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><span data-i18n="actText">Text</span></a>
-        <a class="chip" id="fc-mail" href="#"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg><span data-i18n="emailLabel">Email</span></a>
-      </div>
-      <p class="fc-email" id="fc-email-line"><a id="fc-mail-v" dir="ltr" href="#">firstlifesavers@gmail.com</a></p>
+      <ul class="contact-lines cl-foot">
+            <li><button class="cl-row" type="button" id="fc-number" data-sheet aria-haspopup="dialog" aria-label="Call, text or WhatsApp" data-i18n-aria="numberAria"><span class="cl-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="cl-v" id="fc-v" dir="ltr">(646) 626-4996</span></button></li>
+            <li><a class="cl-row" id="fc-mail" href="#"><span class="cl-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg></span><span class="cl-v" id="fc-mail-v" dir="ltr">firstlifesavers@gmail.com</span></a></li>
+          </ul>
     </div>
     <nav class="footer-nav" aria-label="Footer" data-i18n-aria="footNavAria">
       <a href="#courses" data-i18n="navCourses">Courses</a><a href="#why" data-i18n="navWhy">Why us</a><a href="#faq" data-i18n="navFaq">FAQ</a><a href="#book" data-i18n="navBook">Book a class</a>

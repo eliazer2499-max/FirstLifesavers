@@ -532,18 +532,17 @@ if (typeof document !== "undefined") {
     const mainNumber = conf.phone ? SITE_CONFIG.phoneNumber : SITE_CONFIG.whatsappNumber;
     const email = cleanEmail(SITE_CONFIG.email);
     const mailHref = email ? "mailto:" + email : "";
-    function setLink(id, href) { const el = $(id); if (!el) return; el.hidden = !href; if (href) el.href = href; }
-    /* side box + footer: Call / Text / Email chips; pop-up: Call / Text / WhatsApp */
-    ["#dq-call", "#fc-call", "#sh-call"].forEach(id => setLink(id, telHref));
-    ["#dq-text", "#fc-text", "#sh-text"].forEach(id => setLink(id, smsHref));
+    function setLink(id, href) { const el = $(id); if (!el) return; el.hidden = !href; if (href) el.href = href; const li = el.closest(".contact-lines li"); if (li) li.hidden = !href; }
+    /* side box + footer: plain lines, number + email. Email opens mail;
+       the number opens the pop-up: Call / Text / WhatsApp */
+    setLink("#sh-call", telHref);
+    setLink("#sh-text", smsHref);
     setLink("#sh-wa", waHref);
-    ["#direct-email", "#fc-mail", "#fc-mail-v"].forEach(id => setLink(id, mailHref));
-    $("#fc-mail-v").textContent = email;
-    $("#fc-email-line").hidden = !email;
+    ["#direct-email", "#fc-mail"].forEach(id => setLink(id, mailHref));
+    $$("#direct-email-v, #fc-mail-v").forEach(el => { el.textContent = email; });
     const anyNumber = conf.phone || conf.whatsapp;
     $$("#direct-number, #fc-v, #sheet-number").forEach(el => { el.textContent = anyNumber ? displayNumber(mainNumber) : ""; });
-    $("#number-btn").hidden = !anyNumber;
-    $("#fc-number").hidden = !anyNumber;
+    ["#number-btn", "#fc-number"].forEach(id => { $(id).hidden = !anyNumber; $(id).closest("li").hidden = !anyNumber; });
     $("#direct").hidden = !(anyNumber || email);
     $("#footer-contact").hidden = !(anyNumber || email);
     if (!conf.whatsapp || !conf.email || !conf.phone) console.info("[First LifeSavers] Fill in SITE_CONFIG at the top of script.js.");

@@ -262,23 +262,24 @@ html[dir=rtl] .check::after{inset-inline-start:auto;right:9px}
 .copy-link:hover{color:var(--navy)}
 .copy-link.done{color:#0E7D43;text-decoration:none}
 
-/* reach us directly (book section) + footer: number once, small chips below */
+/* reach us directly (book section) + footer: plain lines like a regular site.
+   Email opens mail; the number opens the Call / Text / WhatsApp pop-up. */
 .direct{margin-top:1.8rem}
-.direct-label{font-weight:700;margin:0 0 .5rem;opacity:.9}
-.direct-number{display:inline-flex;align-items:center;gap:6px;padding:2px 0;border:0;background:none;color:#fff;font:800 1.45rem/1.3 var(--font);letter-spacing:.01em;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:5px;text-decoration-thickness:1.5px}
-.direct-number .ico{width:18px;height:18px;opacity:.6;stroke-width:2.4}
-.direct-number:hover{text-decoration-color:#fff}
-.direct-number:focus-visible{outline:3px solid rgba(255,255,255,.5);outline-offset:4px;border-radius:6px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px 7px 11px;min-height:36px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:#fff;font-weight:600;font-size:.85rem;text-decoration:none;transition:background-color .15s ease,border-color .15s ease}
-.chip .ico{width:15px;height:15px}
-.chip:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.45)}
-.chip:focus-visible{outline:3px solid rgba(255,255,255,.5);outline-offset:2px}
-.footer-h{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;opacity:.8;margin-bottom:.4rem!important}
-.fc-number{font-size:1.2rem}
-.fc-email{margin:.7rem 0 0!important;font-size:.9rem}
-.fc-email a{color:#C9D2E0;font-weight:600;text-decoration:none;overflow-wrap:anywhere}
-.fc-email a:hover{color:#fff;text-decoration:underline}
+.direct-label{font-weight:700;margin:0 0 .6rem;opacity:.9}
+.contact-lines{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.contact-lines li{margin:0;padding:0}
+.contact-lines li::before{content:none}
+.cl-row{display:inline-flex;align-items:center;gap:12px;max-width:100%;padding:2px 0;border:0;background:none;color:#fff;font:700 1.15rem/1.3 var(--font);text-decoration:none;cursor:pointer;text-align:start}
+.cl-ico{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);transition:background-color .15s ease}
+.cl-ico .ico{width:17px;height:17px}
+.cl-v{overflow-wrap:anywhere}
+.cl-row:hover .cl-ico{background:rgba(255,255,255,.2)}
+.cl-row:focus-visible{outline:3px solid rgba(255,255,255,.5);outline-offset:4px;border-radius:8px}
+.cl-foot{gap:8px}
+.cl-foot .cl-row{font-size:1rem;font-weight:600;color:#E3E8F0}
+.cl-foot .cl-ico{width:32px;height:32px}
+.cl-foot .cl-ico .ico{width:15px;height:15px}
+.footer-h{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;opacity:.8;margin-bottom:.6rem!important}
 
 /* small pop-up: call / text / WhatsApp */
 .sheet{padding:0;border:0;margin:0;background:transparent;width:100%;max-width:100%;height:100%;max-height:100%;inset:0;overflow:hidden}

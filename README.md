@@ -13,7 +13,7 @@ email: "firstlifesavers@gmail.com",
 ```
 
 To change them, edit those three lines. They fill in the "Reach us directly" box
-(number, then Call / Text / Email; tapping the number opens Call / Text / WhatsApp),
+(the number and the email address; tapping the number opens Call / Text / WhatsApp, tapping the email opens email),
 the footer, and the buttons under the booking form. The booking form builds a ready-made message and opens WhatsApp,
 Messages (text) or the visitor's email app. Nothing is sent from the website itself.
 
