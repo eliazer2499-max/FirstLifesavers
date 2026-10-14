@@ -11,15 +11,16 @@
    Any button whose setting is empty or still says YOUR_... is hidden.
    ===================================================================== */
 const SITE_CONFIG = {
-  phoneNumber: "YOUR_PHONE_NUMBER",
-  whatsappNumber: "YOUR_WHATSAPP_NUMBER",
-  email: "YOUR_EMAIL@example.com",
+  phoneNumber: "(718) 555-0123",
+  whatsappNumber: "(718) 555-0123",
+  email: "info@firstlifesavers.com",
   businessName: "First LifeSavers"
 };
 
 /* ------------------------- message building ------------------------- */
 function cleanNumber(n) {
   const digits = String(n || "").replace(/[\s()+\-.]/g, "");
+  if (/^\d{10}$/.test(digits)) return "1" + digits; /* US number without country code */
   return /^\d{7,15}$/.test(digits) ? digits : "";
 }
 function cleanEmail(e) {
@@ -222,3 +223,21 @@ if (typeof document !== "undefined") {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { SITE_CONFIG, cleanNumber, cleanEmail, isConfigured, buildMessage, buildWhatsAppLink, buildMailtoLink, buildSmsLink, buildTelLink, displayNumber, I18N };
 }
+
+/* footer contact: filled from SITE_CONFIG at the top of this file */
+(function(){
+  function fill(){
+    var c=isConfigured(SITE_CONFIG), box=document.getElementById("footer-contact");
+    if(!box) return;
+    var t=document.getElementById("fc-tel"), w=document.getElementById("fc-wa"), m=document.getElementById("fc-mail");
+    if(c.phone){t.href=buildTelLink(SITE_CONFIG);t.textContent=displayNumber(SITE_CONFIG.phoneNumber);}else t.parentNode.hidden=true;
+    if(c.whatsapp){w.href="https://wa.me/"+cleanNumber(SITE_CONFIG.whatsappNumber).replace(/^(\d{10})$/,"1$1");w.textContent=displayNumber(SITE_CONFIG.whatsappNumber);}else w.parentNode.hidden=true;
+    if(c.email){m.href="mailto:"+cleanEmail(SITE_CONFIG.email);m.textContent=cleanEmail(SITE_CONFIG.email);}else m.parentNode.hidden=true;
+    if(c.phone&&c.whatsapp&&cleanNumber(SITE_CONFIG.phoneNumber)===cleanNumber(SITE_CONFIG.whatsappNumber)){
+      w.parentNode.hidden=true; t.parentNode.querySelector(".fc-l").textContent="Phone & WhatsApp:";
+    }
+    if(!c.phone&&!c.whatsapp&&!c.email) box.hidden=true;
+  }
+  if(typeof document==="undefined") return;
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",fill);else fill();
+})();

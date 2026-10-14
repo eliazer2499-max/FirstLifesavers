@@ -214,7 +214,7 @@ a{color:var(--red)}
   .why-grid{grid-template-columns:5fr 6fr;gap:64px}
   .how-grid{grid-template-columns:6fr 5fr;gap:64px}
   .book-grid{grid-template-columns:5fr 6fr;gap:64px}
-  .footer-grid{grid-template-columns:1.3fr 1fr 1fr;align-items:start}
+  .footer-grid{grid-template-columns:1.3fr 1fr 1fr 1fr;align-items:start}
   .hero-content{padding-bottom:88px}
   .hero{align-items:center}
   .hero-shade{background:linear-gradient(90deg,rgba(15,28,49,.88) 0%,rgba(15,28,49,.55) 45%,rgba(15,28,49,.15) 75%),linear-gradient(180deg,rgba(15,28,49,.5) 0%,rgba(15,28,49,0) 30%,rgba(15,28,49,.6) 100%)}
@@ -235,3 +235,9 @@ a{color:var(--red)}
 .contact-list a{color:#fff;font-weight:700;font-size:1.15rem;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:3px;word-break:break-all}
 .contact-list a.cl-sms{font-size:.9rem;font-weight:600;opacity:.85}
 [hidden]{display:none !important}
+
+.footer-contact p{margin:.25rem 0;font-size:.95rem}
+.footer-contact a{color:#fff;text-decoration:none;font-weight:700}
+.footer-contact a:hover{text-decoration:underline}
+.footer-contact .fc-l{opacity:.75}
+.footer-h{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;opacity:.8;margin-bottom:.5rem!important}
