@@ -2,18 +2,19 @@
 
 A fast, static website (plain HTML, CSS and JavaScript). No server, no build step.
 
-## Before you publish: add your contact details
+## Your contact details
 
-Open `script.js` and edit the three lines at the very top:
+They are already filled in at the very top of `script.js`:
 
 ```js
-phoneNumber: "(718) 555-0123",
-whatsappNumber: "(718) 555-0123",
-email: "info@firstlifesavers.com",
+phoneNumber: "(646) 626-4996",
+whatsappNumber: "(646) 626-4996",
+email: "firstlifesavers@gmail.com",
 ```
 
-These fill in the contact block, the Call / Text / WhatsApp buttons and pop-up,
-and the footer. The booking form builds a ready-made message and opens WhatsApp,
+To change them, edit those three lines. They fill in the "Reach us directly" box
+(number, then Call / Text / Email; tapping the number opens Call / Text / WhatsApp),
+the footer, and the buttons under the booking form. The booking form builds a ready-made message and opens WhatsApp,
 Messages (text) or the visitor's email app. Nothing is sent from the website itself.
 
 ## English / Yiddish

@@ -12,7 +12,7 @@
 const SITE_CONFIG = {
   phoneNumber: "(646) 626-4996",
   whatsappNumber: "(646) 626-4996",
-  email: "firstlifesavers@gmail.com.com",
+  email: "firstlifesavers@gmail.com",
   businessName: "First LifeSavers"
 };
 
@@ -194,6 +194,8 @@ const I18N = {
     bp2: "Men's or women's class",
     bp3: "Your location or ours",
     directLabel: "Or reach us directly",
+    numberAria: "Call, text or WhatsApp us",
+    sendLabel: "Send it with one tap:",
     numberHint: "Tap to call, text or WhatsApp",
     actCall: "Call",
     actText: "Text",
@@ -374,6 +376,8 @@ const I18N = {
     bp2: "קלאס פאר מענער אדער פרויען",
     bp3: "ביי אייך אדער ביי אונז",
     directLabel: "אדער פארבינדט אייך גלייך",
+    numberAria: "רופט, טעקסט אדער WhatsApp",
+    sendLabel: "שיקט עס מיט איין קליק:",
     numberHint: "דריקט צו רופן, טעקסטן אדער WhatsApp",
     actCall: "רופן",
     actText: "טעקסט",
@@ -485,7 +489,6 @@ if (typeof document !== "undefined") {
       const toggle = $("#lang-toggle");
       toggle.lang = lang === "yi" ? "en" : "yi";
       toggle.dir = lang === "yi" ? "ltr" : "rtl";
-      updateFooterLabel();
       if (lastData) showMessage(lastData, false);
       try { localStorage.setItem("fls-lang", lang); } catch (e) {}
     }
@@ -518,46 +521,34 @@ if (typeof document !== "undefined") {
       }
     }
 
-    /* ---------- reveal on scroll ---------- */
-    const items = $$(".reveal");
-    if ("IntersectionObserver" in window && !reduceMotion) {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-      items.forEach(el => io.observe(el));
-    } else items.forEach(el => el.classList.add("in"));
+    /* ---------- reveal ----------
+       Content is never hidden waiting for scroll (that left sections blank in
+       full-page captures and on some phones). Nothing to do here. */
 
     /* ---------- contact details (from SITE_CONFIG) ---------- */
     const telHref = conf.phone ? buildTelLink(SITE_CONFIG) : "";
     const smsHref = conf.phone ? buildSmsLink(SITE_CONFIG, "") : "";
     const waHref = conf.whatsapp ? buildWhatsAppLink(SITE_CONFIG, "") : "";
     const mainNumber = conf.phone ? SITE_CONFIG.phoneNumber : SITE_CONFIG.whatsappNumber;
-    const sameNumber = conf.phone && conf.whatsapp && cleanNumber(SITE_CONFIG.phoneNumber) === cleanNumber(SITE_CONFIG.whatsappNumber);
     const email = cleanEmail(SITE_CONFIG.email);
+    const mailHref = email ? "mailto:" + email : "";
     function setLink(id, href) { const el = $(id); if (!el) return; el.hidden = !href; if (href) el.href = href; }
-    [["#dq-call", "#fc-call", "#sh-call", telHref], ["#dq-text", "#fc-text", "#sh-text", smsHref], ["#dq-wa", "#fc-wa", "#sh-wa", waHref]]
-      .forEach(([a, b, c, href]) => { setLink(a, href); setLink(b, href); setLink(c, href); });
+    /* side box + footer: Call / Text / Email chips; pop-up: Call / Text / WhatsApp */
+    ["#dq-call", "#fc-call", "#sh-call"].forEach(id => setLink(id, telHref));
+    ["#dq-text", "#fc-text", "#sh-text"].forEach(id => setLink(id, smsHref));
+    setLink("#sh-wa", waHref);
+    ["#direct-email", "#fc-mail", "#fc-mail-v"].forEach(id => setLink(id, mailHref));
+    $("#fc-mail-v").textContent = email;
+    $("#fc-email-line").hidden = !email;
     const anyNumber = conf.phone || conf.whatsapp;
     $$("#direct-number, #fc-v, #sheet-number").forEach(el => { el.textContent = anyNumber ? displayNumber(mainNumber) : ""; });
     $("#number-btn").hidden = !anyNumber;
     $("#fc-number").hidden = !anyNumber;
-    $("#direct-quick").hidden = !anyNumber;
-    $("#fc-quick").hidden = !anyNumber;
-    const quickCount = [telHref, smsHref, waHref].filter(Boolean).length;
-    $("#direct-quick").style.gridTemplateColumns = "repeat(" + Math.max(quickCount, 1) + ",1fr)";
-    setLink("#direct-email", email ? "mailto:" + email : "");
-    setLink("#fc-mail", email ? "mailto:" + email : "");
-    $("#direct-email-v").textContent = email; $("#fc-mail-v").textContent = email;
     $("#direct").hidden = !(anyNumber || email);
     $("#footer-contact").hidden = !(anyNumber || email);
-    function updateFooterLabel() {
-      const k = $("#fc-k"); if (!k) return;
-      const key = sameNumber || !conf.whatsapp ? (conf.whatsapp ? "footPhoneWa" : "footPhone") : (conf.phone ? "footPhone" : "actWa");
-      k.dataset.i18n = key; k.textContent = I18N[lang][key];
-    }
     if (!conf.whatsapp || !conf.email || !conf.phone) console.info("[First LifeSavers] Fill in SITE_CONFIG at the top of script.js.");
 
-    /* ---------- call / text / WhatsApp pop-up ---------- */
+    /* ---------- small pop-up when the number is tapped ---------- */
     const sheet = $("#sheet");
     let lastFocus = null;
     function openSheet(ev) {
@@ -566,12 +557,11 @@ if (typeof document !== "undefined") {
       document.body.classList.add("sheet-open");
     }
     function closeSheet() {
-      if (sheet.close) sheet.close(); else sheet.removeAttribute("open");
+      if (sheet.close && sheet.open) sheet.close(); else { sheet.removeAttribute("open"); document.body.classList.remove("sheet-open"); }
     }
     sheet.addEventListener("close", () => { document.body.classList.remove("sheet-open"); if (lastFocus) lastFocus.focus({ preventScroll: true }); });
     $$("[data-sheet]").forEach(b => b.addEventListener("click", openSheet));
     sheet.addEventListener("click", e => { if (e.target === sheet) closeSheet(); });
-    $("#sheet-x").addEventListener("click", closeSheet);
     $("#sheet-cancel").addEventListener("click", closeSheet);
     $$(".sheet-opt").forEach(a => a.addEventListener("click", () => setTimeout(closeSheet, 50)));
     document.addEventListener("keydown", e => { if (e.key === "Escape" && sheet.hasAttribute("open")) closeSheet(); });
@@ -598,7 +588,7 @@ if (typeof document !== "undefined") {
     const wa = $("#wa-link"), mail = $("#mail-link"), sms = $("#sms-link"), call = $("#call-link");
     const copyBtn = $("#copy-btn"), copyLabel = $("#copy-label"), prepLabel = $("#prepare-label");
     setOpen(readyWrap, false);
-    sms.hidden = !conf.phone; call.hidden = !conf.phone;
+    sms.hidden = !conf.phone; call.hidden = !conf.phone; wa.hidden = !conf.whatsapp; mail.hidden = !conf.email;
     if (conf.phone) call.href = telHref;
     let lastData = null;
 
@@ -641,7 +631,7 @@ if (typeof document !== "undefined") {
     /* remembered language */
     let saved = "en";
     try { saved = localStorage.getItem("fls-lang") || "en"; } catch (e) {}
-    if (saved === "yi") setLang("yi"); else updateFooterLabel();
+    if (saved === "yi") setLang("yi");
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 }
