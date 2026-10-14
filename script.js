@@ -10,9 +10,9 @@
    Any button whose setting is empty or still says YOUR_... is hidden.
    ===================================================================== */
 const SITE_CONFIG = {
-  phoneNumber: "(718) 555-0123",
-  whatsappNumber: "(718) 555-0123",
-  email: "info@firstlifesavers.com",
+  phoneNumber: "(646) 626-4996",
+  whatsappNumber: "(646) 626-4996",
+  email: "firstlifesavers@gmail.com.com",
   businessName: "First LifeSavers"
 };
 
