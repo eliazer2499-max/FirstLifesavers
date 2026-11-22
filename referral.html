@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#182945">
+  <title>First LifeSavers | Referral Link</title>
+  <meta name="description" content="Create and share your First LifeSavers referral link on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #D3213A;
+      --navy: #182945;
+      --ink: #1c2940;
+      --muted: #667085;
+      --line: #e7eaf0;
+      --surface: #ffffff;
+      --soft: #f5f7fa;
+      --green: #16834a;
+      --shadow: 0 18px 55px rgba(24, 41, 69, .11);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Montserrat", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 12% 0%, rgba(211,33,58,.08), transparent 34rem),
+        linear-gradient(180deg, #f8f9fb 0%, #eef2f7 100%);
+    }
+    a { color: inherit; }
+    .topbar {
+      background: var(--navy);
+      color: #fff;
+      padding: 15px 22px;
+      border-bottom: 4px solid var(--red);
+    }
+    .topbar-inner {
+      width: min(1080px, 100%);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      font-size: 19px;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: var(--red);
+      color: #fff;
+      font-size: 21px;
+      font-weight: 800;
+    }
+    .top-link {
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      opacity: .9;
+    }
+    main {
+      width: min(940px, calc(100% - 32px));
+      margin: 46px auto 64px;
+    }
+    .intro { text-align: center; margin-bottom: 27px; }
+    .eyebrow {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(29px, 5vw, 43px);
+      letter-spacing: -1.5px;
+      line-height: 1.14;
+    }
+    .intro p {
+      max-width: 620px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid rgba(24,41,69,.07);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 4vw, 32px);
+    }
+    .panel h2 {
+      color: var(--navy);
+      font-size: 18px;
+      margin: 0 0 7px;
+      letter-spacing: -.35px;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 0 0 23px;
+    }
+    label.field-label {
+      display: block;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+      margin: 17px 0 8px;
+    }
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      border: 1px solid #dce1e9;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 10px;
+      padding: 13px 14px;
+      font: 500 14px "Montserrat", Arial, sans-serif;
+      outline: none;
+      transition: border .15s, box-shadow .15s;
+    }
+    input:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(211,33,58,.1);
+    }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 15px 0 3px;
+      margin-top: 8px;
+    }
+    .toggle-copy strong { display:block; color:var(--navy); font-size:12px; }
+    .toggle-copy span { display:block; color:var(--muted); font-size:11px; margin-top:4px; line-height:1.5; }
+    .switch { position:relative; display:inline-block; width:46px; height:26px; flex:none; }
+    .switch input { opacity:0; width:0; height:0; }
+    .slider {
+      position:absolute; inset:0; cursor:pointer; background:#cbd2dc;
+      border-radius:30px; transition:.2s;
+    }
+    .slider:before {
+      content:""; position:absolute; width:20px; height:20px; left:3px; top:3px;
+      background:white; border-radius:50%; transition:.2s; box-shadow:0 1px 3px #0002;
+    }
+    .switch input:checked + .slider { background:var(--green); }
+    .switch input:checked + .slider:before { transform:translateX(20px); }
+    .preview-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin: 3px 0 10px;
+    }
+    .message {
+      background: #f2f6f3;
+      border: 1px solid #dce9df;
+      border-radius: 13px;
+      padding: 17px;
+      min-height: 126px;
+      color: #243b2d;
+      font-size: 13px;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .link-box {
+      margin-top: 17px;
+      border: 1px dashed #cbd3df;
+      border-radius: 11px;
+      padding: 12px;
+      color: #4c5a6d;
+      background: #fafbfd;
+      font-size: 11px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+    .actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:15px; }
+    button {
+      border: 0; border-radius: 10px; padding: 14px 13px;
+      font: 700 12px "Montserrat", Arial, sans-serif; cursor:pointer;
+      transition: transform .12s, filter .12s;
+    }
+    button:hover { filter:brightness(.96); }
+    button:active { transform:translateY(1px); }
+    .primary { background:var(--red); color:#fff; }
+    .secondary { background:var(--navy); color:#fff; }
+    .status { min-height:17px; margin:10px 0 0; color:var(--green); font-size:11px; font-weight:700; }
+    .how {
+      margin-top:20px;
+      background: linear-gradient(135deg, var(--navy), #243c60);
+      color:#fff;
+      border-radius:20px;
+      padding:23px 25px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .step { display:flex; gap:11px; align-items:flex-start; }
+    .num {
+      flex:none; width:27px; height:27px; border-radius:50%;
+      background:var(--red); display:grid; place-items:center;
+      font-size:12px; font-weight:800;
+    }
+    .step strong { display:block; font-size:12px; margin:1px 0 5px; }
+    .step span { display:block; color:#d9e1ed; font-size:10px; line-height:1.6; }
+    footer { text-align:center; color:#7b8492; font-size:10px; margin:25px 0 0; line-height:1.7; }
+    footer a { color:var(--navy); font-weight:700; text-decoration:none; }
+    @media (max-width: 720px) {
+      main { margin-top:32px; }
+      .layout { grid-template-columns:1fr; }
+      .how { grid-template-columns:1fr; gap:15px; }
+      .topbar { padding:12px 16px; }
+      .brand { font-size:16px; }
+      .top-link { font-size:10px; }
+    }
+    @media (max-width: 390px) {
+      .actions { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/" aria-label="First LifeSavers home">
+        <span class="brand-mark" aria-hidden="true">+</span>
+        <span>First LifeSavers</span>
+      </a>
+      <a class="top-link" href="https://firstlifesavers.com/">VISIT OUR WEBSITE</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow">First LifeSavers Referral Program</div>
+      <h1>Share the Skills That Save Lives.</h1>
+      <p>Help someone discover First LifeSavers. Create your personal WhatsApp referral link and share it with friends, family, and your community.</p>
+    </section>
+
+    <section class="layout" aria-label="Referral link generator">
+      <div class="panel">
+        <h2>Create your referral link</h2>
+        <p class="sub">Enter your details below. Your link will be ready to share in seconds.</p>
+
+        <label class="field-label" for="referrerName">Your name</label>
+        <input id="referrerName" type="text" maxlength="60" placeholder="Enter your name" autocomplete="name">
+
+        <label class="field-label" for="referrerPhone">Your phone number</label>
+        <input id="referrerPhone" type="tel" maxlength="24" placeholder="Enter your phone number" autocomplete="tel">
+
+        <div class="toggle-row">
+          <div class="toggle-copy">
+            <strong>Include my phone number</strong>
+            <span>Your number will be included in the WhatsApp message so we can identify your referral.</span>
+          </div>
+          <label class="switch" aria-label="Include my phone number">
+            <input id="includePhone" type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Your WhatsApp message</h2>
+        <p class="sub">This is the message that will open when someone uses your link.</p>
+        <div class="preview-label">Message preview</div>
+        <div class="message" id="messagePreview" aria-live="polite"></div>
+        <div class="preview-label" style="margin-top:18px">Your personal link</div>
+        <div class="link-box" id="linkPreview"></div>
+        <div class="actions">
+          <button class="secondary" id="copyButton" type="button">Copy referral link</button>
+          <button class="primary" id="shareButton" type="button">Share on WhatsApp</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="how" aria-label="How it works">
+      <div class="step"><div class="num">1</div><div><strong>Create your link</strong><span>Add your name and phone number to personalize your referral.</span></div></div>
+      <div class="step"><div class="num">2</div><div><strong>Share on WhatsApp</strong><span>Post it on your status or send it directly to someone.</span></div></div>
+      <div class="step"><div class="num">3</div><div><strong>Get recognized</strong><span>When someone contacts us, your referral details are included in their message.</span></div></div>
+    </section>
+
+    <footer>
+      <strong>First LifeSavers</strong><br>
+      First Aid · CPR · AED Training<br>
+      <a href="https://firstlifesavers.com/">firstlifesavers.com</a>
+    </footer>
+  </main>
+
+  <script>
+    // Uses the WhatsApp contact number already configured on FirstLifeSavers.com.
+    // This is a frontend-only page: it does not store referral data or calculate commissions.
+    const WHATSAPP_NUMBER = "16466264996";
+
+    const nameInput = document.getElementById("referrerName");
+    const phoneInput = document.getElementById("referrerPhone");
+    const includePhone = document.getElementById("includePhone");
+    const messagePreview = document.getElementById("messagePreview");
+    const linkPreview = document.getElementById("linkPreview");
+    const status = document.getElementById("status");
+
+    function buildMessage() {
+      const name = nameInput.value.trim() || "[Your name]";
+      const phone = phoneInput.value.trim();
+      let message = `Hi, I saw your company on "${name}"'s status. I would like to get more info.`;
+      if (includePhone.checked && phone) {
+        message += `\n\nReferral phone: ${phone}`;
+      }
+      return message;
+    }
+
+    function buildLink() {
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
+    }
+
+    function updatePreview() {
+      const message = buildMessage();
+      const link = buildLink();
+      messagePreview.textContent = message;
+      linkPreview.textContent = link;
+      status.textContent = "";
+    }
+
+    [nameInput, phoneInput].forEach(input => input.addEventListener("input", updatePreview));
+    includePhone.addEventListener("change", updatePreview);
+
+    document.getElementById("copyButton").addEventListener("click", async () => {
+      const link = buildLink();
+      try {
+        await navigator.clipboard.writeText(link);
+        status.textContent = "Your referral link has been copied.";
+      } catch (error) {
+        const temporary = document.createElement("textarea");
+        temporary.value = link;
+        temporary.style.position = "fixed";
+        temporary.style.opacity = "0";
+        document.body.appendChild(temporary);
+        temporary.select();
+        const copied = document.execCommand("copy");
+        temporary.remove();
+        status.textContent = copied
+          ? "Your referral link has been copied."
+          : "Please copy the link shown above.";
+      }
+    });
+
+    document.getElementById("shareButton").addEventListener("click", () => {
+      window.open(buildLink(), "_blank", "noopener,noreferrer");
+    });
+
+    updatePreview();
+  </script>
+</body>
+</html>
